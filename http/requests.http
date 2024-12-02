@@ -1,0 +1,27 @@
+### Requête pour récupérer tous les pays avec tous leurs attributs
+POST http://localhost:4000
+Content-Type: application/json
+
+{
+    "query": "query QueryAllCountries { getAllCountries { code country_name emoji continent_code } }"
+}
+
+###
+
+### Query pour récupérer les pays par leur code exemple : FR -> France
+POST http://localhost:4000
+Content-Type: application/json
+
+{
+    "query": "query QueryCountryByCode { getCountryByCode { code country_name emoji continent_code } }"
+}
+
+###
+
+### Query pour récupérer les pays d'un continent : EU -> France, Belgique, Italie / AS -> Japon, Vietnam...
+POST http://localhost:4000
+Content-Type: application/json
+
+{
+    "query": "query QueryCountryByContinentCode { getCountryByContinentCode { code country_name continent_code } }"
+}

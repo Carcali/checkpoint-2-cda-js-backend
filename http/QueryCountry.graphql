@@ -1,0 +1,26 @@
+### Query pour récupérer tous les pays avec tous leurs attributs
+query QueryAllCountries { 
+    getAllCountries { 
+        code 
+        country_name 
+        emoji
+        continent_code
+    }
+}
+
+### Query pour récupérer un pays par son code exemple : FR -> France
+query QueryCountryByCode($code: String!) { 
+    getCountryByCode(code: $code) { 
+        code 
+        country_name 
+    }
+}
+
+### Query pour récupérer les pays d'un continent : EU -> France, Belgique, Italie / AS -> Japon, Vietnam...
+query QueryCountryByContinentCode($continent_code: String!) { 
+    getCountryByContinentCode(continent_code: $continent_code) { 
+        code
+        country_name
+        continent_code
+    }
+}
